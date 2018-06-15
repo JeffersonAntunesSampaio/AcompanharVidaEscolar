@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.ProfessorFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    [
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtvwCadastrarProfessor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:padding="@dimen/dim_padTxt"
+                android:text="@string/str_txtvwCadastrarProfessor"
+                android:textSize="@dimen/dim_txtTitulo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.503"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/txtMatriculaProfessor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="32dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:gravity="start"
+                android:hint="@string/str_txtMatriculaAluno"
+                android:inputType="number"
+                android:maxLength="6"
+                android:textSize="@dimen/dim_txtSubTitulo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtvwCadastrarProfessor" />
+
+            <EditText
+                android:id="@+id/txtNomeProfessor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="32dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:gravity="start"
+                android:hint="@string/str_hint_nome"
+                android:inputType="textPersonName"
+                android:maxLength="60"
+                android:textSize="@dimen/dim_txtSubTitulo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtMatriculaProfessor" />
+
+            <EditText
+                android:id="@+id/txtDisciplina"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="32dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:gravity="start"
+                android:hint="@string/str_txtDisciplina"
+                android:inputType="textPersonName"
+                android:maxLength="20"
+                android:textSize="@dimen/dim_txtSubTitulo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtNomeProfessor" />
+
+            <Button
+                android:id="@+id/btnCadastrarProfessor"
+                android:layout_width="wrap_content"
+                android:layout_height="27dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorPrimary"
+                android:padding="5dp"
+                android:text="@string/str_btnCadastrarProfessor"
+                android:textSize="@dimen/dim_txtSubTitulo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtDisciplina" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="56dp"
+                android:background="@color/gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnCadastrarProfessor">
+
+
+                <TextView
+                    android:id="@+id/txtvwInserirDadosTurma"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="@string/str_txtInserirDadosTurma"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/txtTurmaChamada"
+                    android:layout_width="76dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/txtvwInserirDadosTurma"
+                    android:layout_marginStart="76dp"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:hint="@string/str_txtTurma"
+                    android:inputType="textPersonName"
+                    android:maxLength="2"
+                    android:textSize="@dimen/dim_txtSubTitulo"
+                    android:layout_marginLeft="76dp"
+                    android:layout_alignParentLeft="true" />
+
+                <EditText
+                    android:id="@+id/txtDataChamada"
+                    android:layout_width="90dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@+id/txtvwInserirDadosTurma"
+                    android:layout_marginEnd="90dp"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:hint="@string/str_txtData"
+                    android:inputType="date"
+                    android:textSize="@dimen/dim_txtSubTitulo"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="90dp" />
+
+                <Button
+                    android:id="@+id/btnFazerChamada"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorPrimary"
+                    android:padding="5dp"
+                    android:text="@string/str_btnFazerChamada"
+                    android:textSize="@dimen/dim_txtTitulo" />
+
+            </RelativeLayout>
+
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+
+</FrameLayout>

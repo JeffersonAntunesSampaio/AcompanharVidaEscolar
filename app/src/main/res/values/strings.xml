@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">AvE</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="facebook_app_id" translatable="false">1832024487102633</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb1832024487102633</string>
+
+    <string name="str_app_slogan">Acompanhe Vida Escolar</string>
+    <string name="str_hint_nome">Nome Completo</string>
+    <string name="str_hint_email">Email</string>
+    <string name="str_hint_senha">Senha</string>
+    <string name="str_btnLogar">Entrar</string>
+    <string name="str_txtvwEsqSenha">Esqueceu senha?</string>
+    <string name="str_txtvwCadUsuario">Não possui login? Cadastre-se</string>
+    <string name="str_txtvwOu">ou</string>
+    <string name="str_imgCadUsuario">Imagem Cadastrar Usuario</string>
+    <string name="str_btnCadastrar">CADASTRAR</string>
+    <string name="str_item_configuracoes">Configurações</string>
+    <string name="str_item_sair">Sair</string>
+    <string name="str_item_filhos">Filhos (as)</string>
+    <string name="str_item_professor">Professor</string>
+    <string name="str_item_turmas">Turmas</string>
+    <string name="str_txtvwCadastrarTurma">Cadastrar Turmas:</string>
+    <string name="str_btnCadastrarTurma">Nova Turma</string>
+    <string name="str_txtvwCadastrarAluno">Cadastrar Aluno:</string>
+    <string name="str_btnCadastrarAluno">Novo Aluno</string>
+    <string name="str_txtvwSemana">Professores dia semana:</string>
+    <string name="str_txtTurma">Turma</string>
+    <string name="str_txtTurno">Turno</string>
+    <string name="str_txtSala">Sala</string>
+    <string name="str_txtDom">dom</string>
+    <string name="str_txtSeg">seg</string>
+    <string name="str_txtTer">ter</string>
+    <string name="str_txtQua">qua</string>
+    <string name="str_txtQui">qui</string>
+    <string name="str_txtSex">sex</string>
+    <string name="str_txtSab">sab</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="str_txtMatriculaAluno">Matricula</string>
+    <string name="str_txtTurmaAluno">Turma</string>
+    <string name="str_txtvwCadastrarProfessor">Cadastrar Professor</string>
+    <string name="str_txtDisciplina">Disciplina</string>
+    <string name="str_btnCadastrarProfessor">Novo Professor</string>
+    <string name="str_btnFazerChamada">Fazer Chamada Online</string>
+    <string name="str_txtData">31/12/2018</string>
+    <string name="str_txtInserirDadosTurma">Inserir dados da turma e dia da chamada</string>
+
+
+</resources>

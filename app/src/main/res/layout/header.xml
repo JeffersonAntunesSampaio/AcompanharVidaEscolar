@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary">
+
+
+    <ImageView
+        android:id="@+id/imgContact"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        app:srcCompat="@drawable/contact"
+        android:layout_gravity="center" />
+    <TextView
+        android:id="@+id/txtvw_NavigationName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jefferson Antunes Sampaio"
+        android:layout_gravity="center"
+        android:textColor="@color/black" />
+    <TextView
+        android:id="@+id/txtvw_NavigationAcesso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Administrador"
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        android:padding="10dp"/>
+</LinearLayout>
