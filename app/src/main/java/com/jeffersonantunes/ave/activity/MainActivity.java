@@ -9,9 +9,12 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import com.facebook.login.LoginManager;
 import com.google.firebase.auth.FirebaseAuth;
@@ -28,7 +31,9 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
-    private MenuItem menuConfiguracoes;
+    private Preferencias preferencias;
+    private TextView txtvw_NavigationName;
+    private TextView txtvw_NavigationAcesso;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         mToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Preferencias preferencias = new Preferencias(MainActivity.this);
+        preferencias = new Preferencias(MainActivity.this);
 
         NavigationView nvDrawer = (NavigationView) findViewById(R.id.nv_menu_itens);
 
@@ -56,10 +61,9 @@ public class MainActivity extends AppCompatActivity {
 
         setupDrawerContent(nvDrawer);
 
-
         //Definindo Fragment inicial
         Fragment myFragment = null;
-        Class fragmentClass = FilhoFragment.class;
+        Class fragmentClass = FeedFragment.class;
         try {
              myFragment = (Fragment) fragmentClass.newInstance();
         } catch (InstantiationException e) {
@@ -70,8 +74,20 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.myFragment,myFragment).commit();
 
+        mudarNomeDrawer(nvDrawer.getHeaderView(0));
+
     }
 
+    private void mudarNomeDrawer(View view){
+        //colocando nome do usuario no menu
+
+        txtvw_NavigationName        = (TextView) view.findViewById(R.id.txtvw_NavigationName);
+        txtvw_NavigationAcesso      = (TextView) view.findViewById(R.id.txtvw_NavigationAcesso);
+
+        txtvw_NavigationName.setText(preferencias.getNomeUsuario());
+        txtvw_NavigationAcesso.setText(preferencias.getAcessoUsuario());
+
+    }
     private void permissoesUsuario(Menu menu, String tipoAcesso){
 
         switch (tipoAcesso){
