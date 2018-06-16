@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.TurmaFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtvwCadastrarTurma"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="24dp"
+                android:padding="@dimen/dim_padTxt"
+                android:text="@string/str_txtvwCadastrarTurma"
+                android:textSize="@dimen/dim_txtTitulo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.503"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/txtTurma"
+                android:layout_width="52dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="56dp"
+                android:layout_marginStart="56dp"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/str_txtTurma"
+                android:inputType="textPersonName"
+                android:maxLength="2"
+                android:textSize="@dimen/dim_txtSubTitulo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtvwCadastrarTurma" />
+
+            <EditText
+                android:id="@+id/txtTurno"
+                android:layout_width="87dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="28dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/str_txtTurno"
+                android:inputType="textPersonName"
+                android:maxLength="5"
+                android:textSize="@dimen/dim_txtSubTitulo"
+                app:layout_constraintStart_toEndOf="@+id/txtTurma"
+                app:layout_constraintTop_toBottomOf="@+id/txtvwCadastrarTurma" />
+
+            <EditText
+                android:id="@+id/txtSala"
+                android:layout_width="52dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="56dp"
+                android:layout_marginRight="56dp"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/str_txtSala"
+                android:inputType="number"
+                android:maxLength="3"
+                android:textSize="@dimen/dim_txtSubTitulo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtvwCadastrarTurma" />
+
+            <TextView
+                android:id="@+id/txtvwSemana"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginTop="8dp"
+                android:padding="@dimen/dim_padTxt"
+                android:text="@string/str_txtvwSemana"
+                android:textSize="@dimen/dim_txtSubTitulo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtTurno" />
+
+            <EditText
+                android:id="@+id/txtSeg"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:hint="@string/str_txtSeg"
+                android:inputType="number"
+                android:maxLength="6"
+                android:textSize="@dimen/dim_txtSubTitulo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtvwSemana" />
+
+            <EditText
+                android:id="@+id/txtTer"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:hint="@string/str_txtTer"
+                android:inputType="number"
+                android:maxLength="6"
+                android:textSize="@dimen/dim_txtSubTitulo"
+                app:layout_constraintStart_toEndOf="@+id/txtSeg"
+                app:layout_constraintTop_toBottomOf="@+id/txtvwSemana" />
+
+            <EditText
+                android:id="@+id/txtQua"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:hint="@string/str_txtQua"
+                android:inputType="number"
+                android:maxLength="6"
+                android:textSize="@dimen/dim_txtSubTitulo"
+                app:layout_constraintEnd_toStartOf="@+id/txtQui"
+                app:layout_constraintStart_toEndOf="@+id/txtTer"
+                app:layout_constraintTop_toBottomOf="@+id/txtvwSemana" />
+
+            <EditText
+                android:id="@+id/txtQui"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:hint="@string/str_txtQui"
+                android:inputType="number"
+                android:maxLength="6"
+                android:textSize="@dimen/dim_txtSubTitulo"
+                app:layout_constraintEnd_toStartOf="@+id/txtSex"
+                app:layout_constraintTop_toBottomOf="@+id/txtvwSemana" />
+
+            <EditText
+                android:id="@+id/txtSex"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:hint="@string/str_txtSex"
+                android:inputType="number"
+                android:maxLength="6"
+                android:textSize="@dimen/dim_txtSubTitulo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtvwSemana" />
+
+            <Button
+                android:id="@+id/btnCadastrarTurma"
+                android:layout_width="125dp"
+                android:layout_height="37dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/str_btnCadastrarTurma"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtQua"
+                android:background="@color/colorPrimary"/>
+
+
+            <TextView
+                android:id="@+id/txtvwCadastrarAluno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
+                android:padding="@dimen/dim_padTxt"
+                android:text="@string/str_txtvwCadastrarAluno"
+                android:textSize="@dimen/dim_txtTitulo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnCadastrarTurma" />
+
+            <EditText
+                android:id="@+id/txtMatriculaAluno"
+                android:layout_width="105dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:hint="@string/str_txtMatriculaAluno"
+                android:inputType="number"
+                android:maxLength="6"
+                android:textSize="@dimen/dim_txtSubTitulo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtvwCadastrarAluno" />
+
+            <EditText
+                android:id="@+id/txtTurmaAluno"
+                android:layout_width="105dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:hint="@string/str_txtTurmaAluno"
+                android:inputType="textPersonName"
+                android:maxLength="2"
+                android:textSize="@dimen/dim_txtSubTitulo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/txtMatriculaAluno"
+                app:layout_constraintTop_toBottomOf="@+id/txtvwCadastrarAluno" />
+
+            <EditText
+                android:id="@+id/txtNomeAluno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:gravity="start"
+                android:hint="@string/str_hint_nome"
+                android:inputType="textPersonName"
+                android:maxLength="60"
+                android:textSize="@dimen/dim_txtSubTitulo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtMatriculaAluno" />
+
+            <Button
+                android:id="@+id/btnCadastrarAluno"
+                android:layout_width="125dp"
+                android:layout_height="37dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/str_btnCadastrarAluno"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.986"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtNomeAluno"
+                android:background="@color/colorPrimary"/>
+
+
+
+
+
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+
+</FrameLayout>

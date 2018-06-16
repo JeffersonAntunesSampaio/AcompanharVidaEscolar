@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_item_feed"
+        android:title="@string/str_item_feed"
+        android:orderInCategory="90"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_rss_feed"
+        android:visible="false"/>
+    <item
+        android:id="@+id/menu_item_filhos"
+        android:title="@string/str_item_filhos"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_local_library"
+        android:visible="false"/>
+    <item
+        android:id="@+id/menu_item_professor"
+        android:title="@string/str_item_professor"
+        android:orderInCategory="200"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_person"
+        android:visible="false"/>
+    <item
+        android:id="@+id/menu_item_turmas"
+        android:title="@string/str_item_turmas"
+        android:orderInCategory="300"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_school"
+        android:visible="false"/>
+
+    <item
+        android:id="@+id/menu_item_configuracoes"
+        android:title="@string/str_item_configuracoes"
+        android:orderInCategory="900"
+        app:showAsAction="never"
+        android:icon="@drawable/ic_settings"
+        android:visible="false"/>
+    <item
+        android:id="@+id/menu_item_sair"
+        android:title="@string/str_item_sair"
+        android:orderInCategory="1000"
+        app:showAsAction="never" />
+
+</menu>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dim_padTxt">5dp</dimen>
+    <dimen name="dim_logoLargura">150dp</dimen>
+    <dimen name="dim_logoAltura">150dp</dimen>
+    <dimen name="dim_txtTitulo">16sp</dimen>
+    <dimen name="dim_txtSubTitulo">12sp</dimen>
+</resources>
