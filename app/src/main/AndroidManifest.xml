@@ -15,17 +15,18 @@
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
 
-        <activity android:name=".activity.LoginActivity">
+        <activity android:name=".activity.LoginActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MainActivity" />
-        <activity android:name=".activity.CadastroUsuarioActivity" />
-        <activity android:name=".activity.ChamadaActivity" />
-        <activity android:name=".activity.AlunoActivity"></activity>
+        <activity android:name=".activity.MainActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.CadastroUsuarioActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.ChamadaActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.AlunoActivity" android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

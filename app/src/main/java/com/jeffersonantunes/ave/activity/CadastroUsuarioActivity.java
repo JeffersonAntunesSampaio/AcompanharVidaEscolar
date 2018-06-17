@@ -1,5 +1,6 @@
 package com.jeffersonantunes.ave.activity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -57,6 +58,8 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
                     if (txtCadSenha.getText().length() < 1)txtCadSenha.setError("Por favor digite uma Senha");
 
                 }else {
+                    ProgressDialog dialog = ProgressDialog.show(CadastroUsuarioActivity.this, "",
+                            "Loading. Please wait...", true);
                     usuario = new Usuario();
 
                     usuario.setNome(txtCadNome.getText().toString());
