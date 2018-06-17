@@ -22,6 +22,9 @@ import com.jeffersonantunes.ave.helper.Preferencias;
 import com.jeffersonantunes.ave.model.Nota;
 import com.jeffersonantunes.ave.model.Professor;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
@@ -55,6 +58,10 @@ public class ProfessorFragment extends Fragment {
     private Button btnCadastrarProfessor;
     private Button btnChamada;
     private Button btnInserirNota;
+
+    Calendar calendar;
+    SimpleDateFormat simpleDateFormat;
+    String Dia;
 
     private View view;
 
@@ -108,6 +115,14 @@ public class ProfessorFragment extends Fragment {
         txtNotaDisciplina                          = (EditText) view.findViewById(R.id.txtNotaDisciplina);
         txtNota                                    = (EditText) view.findViewById(R.id.txtNota);
         btnCadastrarProfessor                      = (Button) view.findViewById(R.id.btnCadastrarProfessor);
+
+// get date now
+
+        calendar = Calendar.getInstance();
+        simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        Dia = simpleDateFormat.format(calendar.getTime());
+        txtData.setText(Dia);
+
 
         //verificando acesso do usuario
         Preferencias preferencias = new Preferencias(getActivity());
