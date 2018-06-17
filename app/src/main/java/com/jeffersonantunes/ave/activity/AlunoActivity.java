@@ -10,7 +10,6 @@ import android.view.MenuItem;
 import com.jeffersonantunes.ave.R;
 
 public class AlunoActivity extends AppCompatActivity {
-    ////Felipe viado
 
 
     @Override
@@ -21,7 +20,6 @@ public class AlunoActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); //Mostrar o botão
         getSupportActionBar().setHomeButtonEnabled(true);      //Ativar o botão
         getSupportActionBar().setTitle("Seu titulo aqui");     //Titulo para ser exibido na sua Action Bar em frente à seta
-        //getActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back);
 
     }
 
