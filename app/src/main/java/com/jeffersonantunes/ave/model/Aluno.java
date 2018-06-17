@@ -15,6 +15,11 @@ public class Aluno {
     public Aluno() {
     }
 
+    @Override
+    public String toString() {
+        return this.matricula + " - " + this.nome + " (" + this.turma + ")";
+    }
+
     public void salvar(){
         try {
             DatabaseReference databaseReference = ConfigFirebase.getDbAveReference();

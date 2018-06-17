@@ -21,5 +21,8 @@ public class ChamadaActivity extends AppCompatActivity {
             turma = extra.getString("turma");
         }
 
+        setTitle("Chamada - " + turma + " - " + data);
+
+
     }
 }

@@ -10,7 +10,9 @@ import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -21,6 +23,10 @@ import com.jeffersonantunes.ave.R;
 import com.jeffersonantunes.ave.config.ConfigFirebase;
 import com.jeffersonantunes.ave.helper.Preferencias;
 import com.jeffersonantunes.ave.model.Aluno;
+import com.jeffersonantunes.ave.model.Feed;
+
+import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -44,6 +50,11 @@ public class FilhoFragment extends Fragment {
 
     private DatabaseReference dbAveReference;
     private Preferencias preferencias;
+
+    private ListView lstvwFilho;
+    private ArrayList<Aluno> filhoArrayList;
+    private ArrayAdapter<Aluno> filhoArrayAdapter;
+    private ValueEventListener valueEventListenerFilho;
 
     private OnFragmentInteractionListener mListener;
 
@@ -90,21 +101,59 @@ public class FilhoFragment extends Fragment {
         fb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                abrirCadastroContato();
+                dialogAddFilho();
             }
         });
+
+
+
+        //Config ListView
+        lstvwFilho = (ListView) view.findViewById(R.id.lstFilho);
+        filhoArrayList = new ArrayList<>();
+        filhoArrayAdapter = new ArrayAdapter<Aluno>(
+                getActivity()
+                ,android.R.layout.simple_list_item_1
+                , filhoArrayList
+        );
+        lstvwFilho.setAdapter(filhoArrayAdapter);
+
+        dbAveReference = ConfigFirebase.getDbAveReference()
+                .child("responsavel")
+                .child(preferencias.getIdentificador());
+
+        valueEventListenerFilho = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                //limpar array list
+                filhoArrayList.clear();
+                //Pegando lista dos dados
+                for (DataSnapshot dados: dataSnapshot.getChildren()){
+                    Aluno aluno = dados.getValue(Aluno.class);
+                    filhoArrayList.add(aluno);
+                }
+                filhoArrayAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        };
+
+        dbAveReference.addValueEventListener(valueEventListenerFilho);
 
         return view;
 
     }
 
-    private void abrirCadastroContato(){
+    private void dialogAddFilho(){
 
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
 
         //COnfiguração da alert
         alertDialog.setTitle("Novo Filho");
-        alertDialog.setMessage("Matricula");
+        alertDialog.setMessage("Por favor, digite a matricula do aluno que deseja colocar como responsável");
         alertDialog.setCancelable(false);
 
         final EditText editText = new EditText(getActivity());
@@ -126,7 +175,6 @@ public class FilhoFragment extends Fragment {
 
                     //Recuperar Instancia Fire Base
                     dbAveReference = ConfigFirebase.getDbAveReference().child("aluno").child(matriculaFilho);
-
                     dbAveReference.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
@@ -137,10 +185,9 @@ public class FilhoFragment extends Fragment {
 
                                 dbAveReference = ConfigFirebase.getDbAveReference().child("responsavel")
                                         .child(idUsuarioLogado)
-                                        .child(String.valueOf(alunoRecuperado.getMatricula()))
-                                        .child("nome_filho");
+                                        .child(String.valueOf(alunoRecuperado.getMatricula()));
 
-                                dbAveReference.setValue(alunoRecuperado.getNome());
+                                dbAveReference.setValue(alunoRecuperado);
 
                                 Toast.makeText(getActivity(),"Filho adicionado",Toast.LENGTH_LONG).show();
 
@@ -207,5 +254,11 @@ public class FilhoFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        dbAveReference.removeEventListener(valueEventListenerFilho);
     }
 }

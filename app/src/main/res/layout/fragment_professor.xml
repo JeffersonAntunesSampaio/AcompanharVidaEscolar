@@ -18,111 +18,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/txtvwCadastrarProfessor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="32dp"
-                android:layout_marginLeft="32dp"
-                android:layout_marginRight="32dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="8dp"
-                android:padding="@dimen/dim_padTxt"
-                android:text="@string/str_txtvwCadastrarProfessor"
-                android:textSize="@dimen/dim_txtTitulo"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.503"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <EditText
-                android:id="@+id/txtMatriculaProfessor"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="32dp"
-                android:layout_marginLeft="32dp"
-                android:layout_marginRight="32dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="8dp"
-                android:gravity="start"
-                android:hint="@string/str_txtMatriculaAluno"
-                android:inputType="number"
-                android:maxLength="6"
-                android:textSize="@dimen/dim_txtSubTitulo"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtvwCadastrarProfessor" />
-
-            <EditText
-                android:id="@+id/txtNomeProfessor"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="32dp"
-                android:layout_marginLeft="32dp"
-                android:layout_marginRight="32dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="8dp"
-                android:gravity="start"
-                android:hint="@string/str_hint_nome"
-                android:inputType="textPersonName"
-                android:maxLength="60"
-                android:textSize="@dimen/dim_txtSubTitulo"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtMatriculaProfessor" />
-
-            <EditText
-                android:id="@+id/txtDisciplina"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="32dp"
-                android:layout_marginLeft="32dp"
-                android:layout_marginRight="32dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="8dp"
-                android:gravity="start"
-                android:hint="@string/str_txtDisciplina"
-                android:inputType="textPersonName"
-                android:maxLength="20"
-                android:textSize="@dimen/dim_txtSubTitulo"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtNomeProfessor" />
-
-            <Button
-                android:id="@+id/btnCadastrarProfessor"
-                android:layout_width="wrap_content"
-                android:layout_height="27dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginLeft="32dp"
-                android:layout_marginRight="32dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="8dp"
-                android:background="@color/colorPrimary"
-                android:padding="5dp"
-                android:text="@string/str_btnCadastrarProfessor"
-                android:textSize="@dimen/dim_txtSubTitulo"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtDisciplina" />
-
             <RelativeLayout
+                android:id="@+id/relativeLayout2"
                 android:layout_width="match_parent"
-                android:layout_height="110dp"
+                android:layout_height="111dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="56dp"
+                android:layout_marginTop="8dp"
                 android:background="@color/gray"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnCadastrarProfessor">
+                app:layout_constraintTop_toBottomOf="@+id/txtMatriculaProfessorLogado">
 
 
                 <TextView
@@ -140,32 +49,32 @@
                     android:id="@+id/txtTurmaChamada"
                     android:layout_width="76dp"
                     android:layout_height="30dp"
+                    android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_below="@+id/txtvwInserirDadosTurma"
+                    android:layout_marginLeft="76dp"
                     android:layout_marginStart="76dp"
                     android:background="@color/white"
                     android:gravity="center"
                     android:hint="@string/str_txtTurma"
                     android:inputType="textPersonName"
                     android:maxLength="2"
-                    android:textSize="@dimen/dim_txtSubTitulo"
-                    android:layout_marginLeft="76dp"
-                    android:layout_alignParentLeft="true" />
+                    android:textSize="@dimen/dim_txtSubTitulo" />
 
                 <EditText
                     android:id="@+id/txtDataChamada"
                     android:layout_width="90dp"
                     android:layout_height="30dp"
                     android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
                     android:layout_below="@+id/txtvwInserirDadosTurma"
                     android:layout_marginEnd="90dp"
+                    android:layout_marginRight="90dp"
                     android:background="@color/white"
                     android:gravity="center"
                     android:hint="@string/str_txtData"
                     android:inputType="date"
-                    android:textSize="@dimen/dim_txtSubTitulo"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="90dp" />
+                    android:textSize="@dimen/dim_txtSubTitulo" />
 
                 <Button
                     android:id="@+id/btnFazerChamada"
@@ -178,6 +87,222 @@
                     android:textSize="@dimen/dim_txtTitulo" />
 
             </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/relativeLayout2">
+
+
+                <TextView
+                    android:id="@+id/txtvwInserirNotaAluno"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="@string/str_txtInserirNotaAluno"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/txtNota"
+                    android:layout_width="85dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/txtvwInserirNotaAluno"
+                    android:layout_marginEnd="11dp"
+                    android:layout_marginRight="11dp"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:hint="@string/str_hintNota"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:textSize="@dimen/dim_txtSubTitulo" />
+
+                <EditText
+                    android:id="@+id/txtNotaMatricula"
+                    android:layout_width="90dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/txtvwInserirNotaAluno"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginStart="11dp"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:hint="@string/str_txtMatriculaAluno"
+                    android:inputType="number"
+                    android:maxLength="6"
+                    android:textSize="@dimen/dim_txtSubTitulo" />
+
+                <EditText
+                    android:id="@+id/txtNotaDisciplina"
+                    android:layout_width="135dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/txtvwInserirNotaAluno"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:hint="@string/str_txtDisciplina"
+                    android:inputType="textPersonName"
+                    android:textSize="@dimen/dim_txtSubTitulo" />
+
+                <Button
+                    android:id="@+id/btnInserirNota"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorPrimary"
+                    android:padding="5dp"
+                    android:text="@string/str_btnInserirNota"
+                    android:textSize="@dimen/dim_txtTitulo" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/txtvwCadastrarProfessor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:padding="@dimen/dim_padTxt"
+                android:text="@string/str_txtvwCadastrarProfessor"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.503"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/relativeLayout3" />
+
+            <EditText
+                android:id="@+id/txtMatriculaProfessor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="32dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="4dp"
+                android:gravity="start"
+                android:hint="@string/str_txtMatriculaAluno"
+                android:inputType="number"
+                android:maxLength="4"
+                android:textSize="@dimen/dim_txtSubTitulo"
+                android:enabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtvwCadastrarProfessor" />
+
+            <EditText
+                android:id="@+id/txtNomeProfessor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="32dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginStart="32dp"
+                android:gravity="start"
+                android:hint="@string/str_hint_nome"
+                android:inputType="textPersonName"
+                android:maxLength="60"
+                android:textSize="@dimen/dim_txtSubTitulo"
+                android:enabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtMatriculaProfessor" />
+
+            <EditText
+                android:id="@+id/txtDisciplina"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="32dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginStart="32dp"
+                android:gravity="start"
+                android:hint="@string/str_txtDisciplina"
+                android:inputType="textPersonName"
+                android:maxLength="20"
+                android:textSize="@dimen/dim_txtSubTitulo"
+                android:enabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtNomeProfessor" />
+
+            <Button
+                android:id="@+id/btnCadastrarProfessor"
+                android:layout_width="wrap_content"
+                android:layout_height="27dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/colorPrimary"
+                android:padding="5dp"
+                android:text="@string/str_btnCadastrarProfessor"
+                android:textSize="@dimen/dim_txtSubTitulo"
+                android:enabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtDisciplina" />
+
+            <EditText
+                android:id="@+id/txtMatriculaProfessorLogado"
+                android:layout_width="116dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="@string/str_txtMatriculaProfessor"
+                android:inputType="number"
+                android:textSize="@dimen/dim_txtSubTitulo"
+                android:gravity="center"
+                android:maxLength="4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.032"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtvwInfo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorAccent"
+                android:gravity="start"
+                android:padding="5dp"
+                android:text="@string/str_txtvwInfo"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toTopOf="@+id/relativeLayout2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/txtMatriculaProfessorLogado"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
 
 
         </android.support.constraint.ConstraintLayout>

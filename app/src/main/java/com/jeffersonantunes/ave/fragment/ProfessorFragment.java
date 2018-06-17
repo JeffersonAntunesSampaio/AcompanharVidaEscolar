@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jeffersonantunes.ave.R;
@@ -17,6 +18,8 @@ import com.jeffersonantunes.ave.activity.CadastroUsuarioActivity;
 import com.jeffersonantunes.ave.activity.ChamadaActivity;
 import com.jeffersonantunes.ave.activity.LoginActivity;
 import com.jeffersonantunes.ave.activity.MainActivity;
+import com.jeffersonantunes.ave.helper.Preferencias;
+import com.jeffersonantunes.ave.model.Nota;
 import com.jeffersonantunes.ave.model.Professor;
 
 /**
@@ -37,13 +40,23 @@ public class ProfessorFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private Nota nota;
+
+    private TextView txtvwCadastrarProfessor;
     private EditText txtMatriculaProfessor;
     private EditText txtNomeProfessor;
     private EditText txtDisciplina;
     private EditText txtTurmaChamada;
     private EditText txtData;
+    private EditText txtMatriculaProfessorLogado;
+    private EditText txtNotaMatricula;
+    private EditText txtNotaDisciplina;
+    private EditText txtNota;
     private Button btnCadastrarProfessor;
     private Button btnChamada;
+    private Button btnInserirNota;
+
+    private View view;
 
     private OnFragmentInteractionListener mListener;
 
@@ -82,15 +95,33 @@ public class ProfessorFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_professor, container, false);
+        view = inflater.inflate(R.layout.fragment_professor, container, false);
 
+        txtvwCadastrarProfessor                    = (TextView) view.findViewById(R.id.txtvwCadastrarProfessor);
         txtMatriculaProfessor                      = (EditText) view.findViewById(R.id.txtMatriculaProfessor);
         txtNomeProfessor                           = (EditText) view.findViewById(R.id.txtNomeProfessor);
         txtDisciplina                              = (EditText) view.findViewById(R.id.txtDisciplina);
         txtTurmaChamada                            = (EditText) view.findViewById(R.id.txtTurmaChamada);
         txtData                                    = (EditText) view.findViewById(R.id.txtDataChamada);
-
+        txtMatriculaProfessorLogado                = (EditText) view.findViewById(R.id.txtMatriculaProfessorLogado);
+        txtNotaMatricula                           = (EditText) view.findViewById(R.id.txtNotaMatricula);
+        txtNotaDisciplina                          = (EditText) view.findViewById(R.id.txtNotaDisciplina);
+        txtNota                                    = (EditText) view.findViewById(R.id.txtNota);
         btnCadastrarProfessor                      = (Button) view.findViewById(R.id.btnCadastrarProfessor);
+
+        //verificando acesso do usuario
+        Preferencias preferencias = new Preferencias(getActivity());
+
+        String acesso = preferencias.getAcessoUsuario();
+
+        if ( acesso.equals("administrador")){
+            txtvwCadastrarProfessor.setText("Cadastrar Professor");
+            txtDisciplina.setEnabled(true);
+            txtNomeProfessor.setEnabled(true);
+            txtMatriculaProfessor.setEnabled(true);
+            btnCadastrarProfessor.setEnabled(true);
+        }
+
         btnCadastrarProfessor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -120,17 +151,50 @@ public class ProfessorFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (validaEditText("chamada")){
-                    abrirLoginUsuario();
+                    abrirChamada();
+                }
+            }
+        });
+
+        btnInserirNota                  = (Button) view.findViewById(R.id.btnInserirNota);
+        btnInserirNota.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (validaEditText("nota")) {
+
+                    salvarNotaAluno();
+
+                    txtNotaMatricula.setText("");
+                    txtNotaDisciplina.setText("");
+                    txtNota.setText("");
                 }
             }
         });
 
         return view;
     }
-    private void abrirLoginUsuario(){
+
+    private void salvarNotaAluno(){
+
+        nota = new Nota();
+
+        nota.setMatricula(Integer.parseInt(txtNotaMatricula.getText().toString()));
+        nota.setMatriculaProfessor(Integer.parseInt(txtMatriculaProfessorLogado.getText().toString()));
+        nota.setNota(Integer.parseInt(txtNota.getText().toString()));
+        nota.setDisciplina(txtNotaDisciplina.getText().toString());
+
+        nota.salvar();
+
+        Toast.makeText(getActivity(), "Nota do aluno lançada.", Toast.LENGTH_LONG).show();
+
+    }
+
+    private void abrirChamada(){
         Intent intent = new Intent(getActivity(), ChamadaActivity.class);
-        intent.putExtra("data",txtData.toString());
-        intent.putExtra("turma",txtTurmaChamada.toString());
+        intent.putExtra("data",txtData.getText().toString());
+        intent.putExtra("turma",txtTurmaChamada.getText().toString());
+        intent.putExtra("matriculaProfessor", txtMatriculaProfessorLogado.getText().toString());
         startActivity(intent);
     }
     private boolean validaEditText(String bloco){
@@ -148,7 +212,19 @@ public class ProfessorFragment extends Fragment {
                 }
             case "chamada":
                 if (txtTurmaChamada.getText().length() <= 0
-                        || txtData.getText().length() <= 0) {
+                        || txtData.getText().length() <= 0
+                        || txtMatriculaProfessorLogado.getText().length() <=0) {
+
+                    Toast.makeText(getActivity(), "Por favor preencha todos os campos para continuar.", Toast.LENGTH_LONG).show();
+                    return false;
+                } else {
+                    return true;
+                }
+            case "nota":
+                if (txtNotaMatricula.getText().length() <= 0
+                        || txtNotaDisciplina.getText().length() <= 0
+                        || txtNota.getText().length() <= 0
+                        || txtMatriculaProfessorLogado.getText().length() <=0) {
 
                     Toast.makeText(getActivity(), "Por favor preencha todos os campos para continuar.", Toast.LENGTH_LONG).show();
                     return false;

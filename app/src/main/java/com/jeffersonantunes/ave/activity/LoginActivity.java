@@ -280,22 +280,21 @@ public class LoginActivity extends AppCompatActivity {
 
                     dbAve = ConfigFirebase.getDbAveReference().child(childUsuario).child(idUsuarioLogado);
 
-                    valueEventListener = new ValueEventListener() {
+                    dbAve.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
 
                             Usuario usuarioRecuperado = dataSnapshot.getValue(Usuario.class);
                             Preferencias preferencias = new Preferencias(LoginActivity.this);
                             preferencias.salvarDados(idUsuarioLogado,usuarioRecuperado.getNome(),usuarioRecuperado.getAcesso());
+
                         }
 
                         @Override
                         public void onCancelled(DatabaseError databaseError) {
 
                         }
-                    };
-                    dbAve.addListenerForSingleValueEvent(valueEventListener);
-
+                    });
 
                     Toast.makeText(LoginActivity.this,"Sucesso ao fazer login", Toast.LENGTH_SHORT).show();
                     abrirTelaPrincipal();
@@ -371,6 +370,6 @@ public class LoginActivity extends AppCompatActivity {
     private void abrirTelaPrincipal(){
         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(intent);
-        finish();
+        this.finish();
     }
 }

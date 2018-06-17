@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
     private Preferencias preferencias;
+    private NavigationView nvDrawer;
+
     private TextView txtvw_NavigationName;
     private TextView txtvw_NavigationAcesso;
 
@@ -54,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
         preferencias = new Preferencias(MainActivity.this);
 
-        NavigationView nvDrawer = (NavigationView) findViewById(R.id.nv_menu_itens);
+        nvDrawer = (NavigationView) findViewById(R.id.nv_menu_itens);
 
         //Validando permissoes do usuario
         permissoesUsuario( nvDrawer.getMenu(), preferencias.getAcessoUsuario());
@@ -140,10 +142,12 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.menu_item_configuracoes:
+                fragmentClass = FeedFragment.class;
                 break;
 
             case R.id.menu_item_sair:
                 deslogarUsuario();
+                fragmentClass = FeedFragment.class;
                 break;
 
             default:
@@ -151,7 +155,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
         }
-
 
 
         try {
@@ -193,6 +196,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
+        nvDrawer = (NavigationView) findViewById(R.id.nv_menu_itens);
+
         if (mToggle.onOptionsItemSelected(item)){
             return true;
         }
@@ -213,14 +218,14 @@ public class MainActivity extends AppCompatActivity {
 
     private void deslogarUsuario(){
             mAuth.signOut();
-            LoginManager.getInstance().logOut();
+            //LoginManager.getInstance().logOut();
             abrirTelaLogin();
         }
 
     private void abrirTelaLogin(){
         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
         startActivity(intent);
-        finish();
+        this.finish();
     }
 
 }

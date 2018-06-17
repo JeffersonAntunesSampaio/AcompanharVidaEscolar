@@ -41,13 +41,18 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="str_txtMatriculaAluno">Matricula</string>
     <string name="str_txtTurmaAluno">Turma</string>
-    <string name="str_txtvwCadastrarProfessor">Cadastrar Professor</string>
+    <string name="str_txtvwCadastrarProfessor">Cadastrar Professor (apenas Adminisradores)</string>
     <string name="str_txtDisciplina">Disciplina</string>
     <string name="str_btnCadastrarProfessor">Novo Professor</string>
     <string name="str_btnFazerChamada">Fazer Chamada Online</string>
     <string name="str_txtData">31/12/2018</string>
     <string name="str_txtInserirDadosTurma">Inserir dados da turma e dia da chamada</string>
     <string name="str_item_feed">Feed - Notícias</string>
+    <string name="str_txtInserirNotaAluno">Inserir Nota</string>
+    <string name="str_hintNota">Nota</string>
+    <string name="str_btnInserirNota">Lançar Nota</string>
+    <string name="str_txtMatriculaProfessor">Matricula Professor</string>
+    <string name="str_txtvwInfo"><![CDATA[<-- É necessário inserir sua matricula antes de fazer chamada e/ou lançar notas]]></string>
 
 
 </resources>
