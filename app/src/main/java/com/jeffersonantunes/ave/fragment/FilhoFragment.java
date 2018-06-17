@@ -2,6 +2,7 @@ package com.jeffersonantunes.ave.fragment;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -10,6 +11,7 @@ import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -20,6 +22,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 import com.jeffersonantunes.ave.R;
+import com.jeffersonantunes.ave.activity.AlunoActivity;
 import com.jeffersonantunes.ave.config.ConfigFirebase;
 import com.jeffersonantunes.ave.helper.Preferencias;
 import com.jeffersonantunes.ave.model.Aluno;
@@ -142,6 +145,17 @@ public class FilhoFragment extends Fragment {
         };
 
         dbAveReference.addValueEventListener(valueEventListenerFilho);
+
+        lstvwFilho.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
+
+                Intent intent = new Intent(getActivity(), AlunoActivity.class);
+                startActivity(intent);
+            }
+        });
 
         return view;
 
