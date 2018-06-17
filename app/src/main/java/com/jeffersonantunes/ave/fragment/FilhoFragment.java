@@ -93,7 +93,7 @@ public class FilhoFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_filho, container, false);
@@ -150,9 +150,11 @@ public class FilhoFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-
-
+                Aluno aluno = filhoArrayList.get(position);
                 Intent intent = new Intent(getActivity(), AlunoActivity.class);
+                intent.putExtra("nome",aluno.getNome());
+                intent.putExtra("matricula",String.valueOf(aluno.getMatricula()));
+                intent.putExtra("turma",aluno.getTurma());
                 startActivity(intent);
             }
         });

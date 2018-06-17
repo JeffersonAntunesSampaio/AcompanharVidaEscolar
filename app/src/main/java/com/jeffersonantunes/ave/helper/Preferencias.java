@@ -12,6 +12,7 @@ public class Preferencias {
     private static final String CHAVE_IDENTIFICADOR = "idUsuarioLogado";
     private static final String CHAVE_NOMEUSUARIO = "nomeUsuarioLogado";
     private static final String CHAVE_ACESSOUSUARIO = "acessoUsuarioLogado";
+    private static final String CHAVE_DATACHAMADA = "dataChamadaProfessor";
     private static final int MODE = 0;
 
 
@@ -34,6 +35,20 @@ public class Preferencias {
         //GRAVAR
         editor.commit();
 
+    }
+
+    //Metodo para salvar os dados do user
+    public void salvarData(String data){
+
+        //inseri no arquivo o dado (id,valor)
+        editor.putString(CHAVE_DATACHAMADA,data);
+        //GRAVAR
+        editor.commit();
+
+    }
+
+    public String getData() {
+        return sharedPreferences.getString(CHAVE_DATACHAMADA,null);
     }
 
     public String getIdentificador() {

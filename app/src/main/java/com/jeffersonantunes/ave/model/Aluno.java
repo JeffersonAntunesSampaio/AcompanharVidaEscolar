@@ -3,6 +3,7 @@ package com.jeffersonantunes.ave.model;
 import android.util.Log;
 
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.Exclude;
 import com.jeffersonantunes.ave.config.ConfigFirebase;
 
 public class Aluno {
@@ -10,6 +11,8 @@ public class Aluno {
     private String nome;
     private String turma;
     private int matricula;
+    private boolean marcado;
+
 
 
     public Aluno() {
@@ -17,7 +20,7 @@ public class Aluno {
 
     @Override
     public String toString() {
-        return this.matricula + " - " + this.nome + " (" + this.turma + ")";
+        return this.matricula + " - " + this.nome;
     }
 
     public void salvar(){
@@ -29,6 +32,15 @@ public class Aluno {
             Log.e("ERROR:Aluno:","salvar:" + e.getMessage());
         }
 
+    }
+
+    @Exclude
+    public boolean getMarcado() {
+        return marcado;
+    }
+
+    public void setMarcado(boolean marcado) {
+        this.marcado = marcado;
     }
 
     public String getNome() {

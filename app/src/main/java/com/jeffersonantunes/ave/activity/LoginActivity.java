@@ -1,5 +1,6 @@
 package com.jeffersonantunes.ave.activity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -104,6 +105,8 @@ public class LoginActivity extends AppCompatActivity {
                     if (txtSenha.getText().length() < 1) txtSenha.setError("Por favor digite sua Senha");
 
                 }else {
+                    ProgressDialog dialog = ProgressDialog.show(LoginActivity.this, "",
+                            "Loading. Please wait...", true);
 
                     usuario.setEmail(txtEmail.getText().toString());
                     usuario.setSenha(txtSenha.getText().toString());

@@ -22,6 +22,8 @@ import com.jeffersonantunes.ave.helper.Preferencias;
 import com.jeffersonantunes.ave.model.Nota;
 import com.jeffersonantunes.ave.model.Professor;
 
+import java.text.SimpleDateFormat;
+
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
@@ -120,7 +122,14 @@ public class ProfessorFragment extends Fragment {
             txtNomeProfessor.setEnabled(true);
             txtMatriculaProfessor.setEnabled(true);
             btnCadastrarProfessor.setEnabled(true);
+            txtData.setEnabled(true);
         }
+
+        //Obtendo data de hoje e colocando no formato
+        long date = System.currentTimeMillis();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        String dateString = sdf.format(date);
+        txtData.setText(dateString);
 
         btnCadastrarProfessor.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -212,7 +221,6 @@ public class ProfessorFragment extends Fragment {
                 }
             case "chamada":
                 if (txtTurmaChamada.getText().length() <= 0
-                        || txtData.getText().length() <= 0
                         || txtMatriculaProfessorLogado.getText().length() <=0) {
 
                     Toast.makeText(getActivity(), "Por favor preencha todos os campos para continuar.", Toast.LENGTH_LONG).show();

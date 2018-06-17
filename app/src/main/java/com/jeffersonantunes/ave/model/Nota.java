@@ -15,6 +15,11 @@ public class Nota {
     public Nota() {
     }
 
+    @Override
+    public String toString() {
+        return disciplina + ": " + nota;
+    }
+
     public void salvar(){
         try {
             DatabaseReference databaseReference = ConfigFirebase.getDbAveReference();
