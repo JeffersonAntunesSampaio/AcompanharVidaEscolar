@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "432324007750",
+    "firebase_url": "https://ave-acompanhar-vida-escolar.firebaseio.com",
+    "project_id": "ave-acompanhar-vida-escolar",
+    "storage_bucket": "ave-acompanhar-vida-escolar.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432324007750:android:29987da82f50fd1c",
+        "android_client_info": {
+          "package_name": "com.jeffersonantunes.ave"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "432324007750-5euntql84v6lhjldc276itrg1khuvcj5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jeffersonantunes.ave",
+            "certificate_hash": "6263b54059f2a528a53c7514497e058698b25b2a"
+          }
+        },
+        {
+          "client_id": "432324007750-34vm7383hr360ae88h4o9j0bbmc89hcm.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "432324007750-34vm7383hr360ae88h4o9j0bbmc89hcm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKVgHxkE032adAzKZMOQZJ2QnBwERljmM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "432324007750-34vm7383hr360ae88h4o9j0bbmc89hcm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
